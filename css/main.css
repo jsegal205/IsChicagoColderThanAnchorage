@@ -1,0 +1,23 @@
+body{
+	font-family: sans-serif;
+}
+h1{
+	font-size: 100px;
+	margin: 0 auto;
+	width: 100%;
+}
+.banner {
+	top:75px;
+	right:-75px;
+	padding: 15px;
+	position: absolute;
+	background:#ccc;
+	width: 300px;
+	transform:rotate(45deg);
+	text-align: center;
+}
+#main{
+	margin: 0 auto;
+	text-align: center;
+	width:600px;
+}
