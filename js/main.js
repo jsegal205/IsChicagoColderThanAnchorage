@@ -28,7 +28,7 @@
 	}
 	
 	function compare(){
-		var isColder = ($anch.text() > $chicago.text()) ? 'YES' : 'NO';
+		var isColder = (parseInt($anch.text()) > parseInt($chicago.text()) ? 'YES' : 'NO';
 		$content.text(isColder);
 	}
 
