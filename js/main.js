@@ -10,7 +10,7 @@
 			dataType: 'jsonp',
 			success:function(data){
 				$chicago.text(data.currently.temperature);
-				getAnchTemp();
+				
 			}
 		});
 	}
@@ -22,7 +22,7 @@
 			dataType: 'jsonp',
 			success:function(data){
 				$anch.text(data.currently.temperature);
-				compare();
+				
 			}
 		});
 	}
