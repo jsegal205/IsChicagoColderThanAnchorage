@@ -9,8 +9,8 @@
 			url: url + '41.8369,-87.6847',
 			dataType: 'jsonp',
 			success:function(data){
-				$('#chiTemp').text(data.currently.temperature);
 				chicago = data.currently.temperature;
+				$('#chiTemp').text(chicago);
 			}
 		});
 	}
@@ -21,8 +21,8 @@
 			url: url + '61.2175,-149.8584',
 			dataType: 'jsonp',
 			success:function(data){
-				$('#anchTemp').text(data.currently.temperature);
 				anch = data.currently.temperature;
+				$('#anchTemp').text(anc);
 			}
 		});
 	}
