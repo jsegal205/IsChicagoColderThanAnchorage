@@ -1,7 +1,9 @@
 (function($){
 	var $content = $('#content'),
 		$chicago = $('#chiTemp'),
-		$anch = $('#anchTemp');
+		$anch = $('#anchTemp'),
+		chicago = '',
+		anch = '';
 
 	function getChicagoTemp(){
 		return $.ajax({
@@ -10,7 +12,7 @@
 			dataType: 'jsonp',
 			success:function(data){
 				$chicago.text(data.currently.temperature);
-				
+				chicago = data.currently.temperature;
 			}
 		});
 	}
@@ -22,13 +24,13 @@
 			dataType: 'jsonp',
 			success:function(data){
 				$anch.text(data.currently.temperature);
-				
+				anch = data.currently.temperature;
 			}
 		});
 	}
 	
 	function compare(){
-		var isColder = (parseInt($anch.text()) > parseInt($chicago.text())) ? 'YES' : 'NO';
+		var isColder = (parseInt(anch) > parseInt(chicago)) ? 'YES' : 'NO';
 		$content.text(isColder);
 	}
 
