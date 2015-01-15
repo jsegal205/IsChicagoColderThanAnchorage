@@ -4,7 +4,7 @@
 		$anch = $('#anchTemp');
 
 	function getChicagoTemp(){
-		$.ajax({
+		return $.ajax({
 			type:'POST',
 			url:'https://api.forecast.io/forecast/a895a7c5256b7eadc3074f3485db9406/41.8369,-87.6847',
 			dataType: 'jsonp',
@@ -16,7 +16,7 @@
 	}
 	
 	function getAnchTemp(){
-		$.ajax({
+		return $.ajax({
 			type:'POST',
 			url:'https://api.forecast.io/forecast/a895a7c5256b7eadc3074f3485db9406/61.2175,-149.8584',
 			dataType: 'jsonp',
@@ -32,6 +32,6 @@
 		$content.text(isColder);
 	}
 
-	getChicagoTemp();
+	getChicagoTemp().then(getAnchTemp).then(compare);
 
 })(jQuery);
