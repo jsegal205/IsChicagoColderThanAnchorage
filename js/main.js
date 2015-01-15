@@ -1,8 +1,5 @@
 (function($){
-	var $content = $('#content'),
-		$chicago = $('#chiTemp'),
-		$anch = $('#anchTemp'),
-		chicago = '',
+	var chicago = '',
 		anch = '';
 
 	function getChicagoTemp(){
@@ -11,7 +8,7 @@
 			url:'https://api.forecast.io/forecast/a895a7c5256b7eadc3074f3485db9406/41.8369,-87.6847',
 			dataType: 'jsonp',
 			success:function(data){
-				$chicago.text(data.currently.temperature);
+				$('#chiTemp').text(data.currently.temperature);
 				chicago = data.currently.temperature;
 			}
 		});
@@ -23,7 +20,7 @@
 			url:'https://api.forecast.io/forecast/a895a7c5256b7eadc3074f3485db9406/61.2175,-149.8584',
 			dataType: 'jsonp',
 			success:function(data){
-				$anch.text(data.currently.temperature);
+				$('#anchTemp').text(data.currently.temperature);
 				anch = data.currently.temperature;
 			}
 		});
@@ -31,7 +28,7 @@
 	
 	function compare(){
 		var isColder = (parseInt(anch) > parseInt(chicago)) ? 'YES' : 'NO';
-		$content.text(isColder);
+		$('#content').text(isColder);
 	}
 
 	getChicagoTemp().then(getAnchTemp).then(compare);
