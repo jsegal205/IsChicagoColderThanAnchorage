@@ -22,7 +22,7 @@
 			dataType: 'jsonp',
 			success:function(data){
 				anch = data.currently.temperature;
-				$('#anchTemp').text(anc);
+				$('#anchTemp').text(anch);
 			}
 		});
 	}
